@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="sensor_data_view_form" model="ir.ui.view">
+            <field name="name">Tests</field>
+            <field name="model">sensor.data</field>
+            <field name="arch" type="xml">
+                <form string="Tests">
+                    <sheet>
+
+                        <group>
+
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="count"/>
+                            <field name="type"/>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sensor_data_view_tree" model="ir.ui.view">
+            <field name="name">Tests</field>
+            <field name="model">sensor.data</field>
+            <field name="arch" type="xml">
+                <list string="Test">
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="count"/>
+                    <field name="type"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="sensor_data_view_search" model="ir.ui.view">
+            <field name="name">sensor.data.view.search</field>
+            <field name="model">sensor.data</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_sensor_data_pivot" model="ir.ui.view">
+         <field name="name">sensor.data.pivot</field>
+         <field name="model">sensor.data</field>
+         <field name="arch" type="xml">
+             <pivot string="Test Analysis" sample="1">
+                 <field name="create_date" interval="month" type="row"/>
+             </pivot>
+         </field>
+    </record>
+        <record id="action_sensor_data" model="ir.actions.act_window">
+            <field name="name">Sensor Datas</field>
+            <field name="res_model">sensor.data</field>
+            <field name="view_mode">list,form,pivot,graph</field>
+            <field name="context">{}</field>
+        </record>
+
+        <!-- Define Submenu for Sensor Data under the BKHN menu -->
+        <menuitem id="bkh_menu_sensor_data" name="Sensor Datas" parent="bkh_menu_root" action="action_sensor_data"/>
+
+        <!-- Action to open the model's tree view -->
+
+
+
+
+
+
+    </data>
+</odoo>

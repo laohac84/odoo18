@@ -18,3 +18,13 @@ class TestModel(models.Model):
 
     name = fields.Char('Name', required=True)
     age = fields.Integer('Age')
+
+class SensorData(models.Model):
+
+    _name = 'sensor.data'
+    _description = 'Sensor Data'
+
+    start_date = fields.Datetime('Start Date')
+    end_date = fields.Datetime('End Date')
+    count = fields.Integer('Count')
+    type = fields.Char('Type')

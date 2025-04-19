@@ -11,6 +11,7 @@
         'security/ir.model.access.csv',
 
         'views/test_model.xml',
+        'views/sensor_data.xml',
     ],
     'installable': True,
     'application': True,
